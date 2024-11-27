@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Colors for all mesh renderers given from Lerp <worst,best>
+/// </summary>
 public class ColoringComponent : MonoBehaviour
 {
     public Color bestColor = Color.green;

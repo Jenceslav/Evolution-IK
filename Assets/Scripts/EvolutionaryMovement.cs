@@ -65,6 +65,9 @@ public class EvolutionaryMovement : MonoBehaviour
         return movementSystem;
     }
 
+    /// <summary>
+    /// Runs the algorithm without waiting
+    /// </summary>
     public void RunFast()
     {
        long t1 =  DateTime.Now.Ticks;
@@ -103,7 +106,7 @@ public class EvolutionaryMovement : MonoBehaviour
 
 
     /// <summary>
-    /// Runs the evolutionary algorithm for the specified number of generations.
+    /// Runs the evolutionary algorithm for the specified number of generations. Has time waiting between frames of evolution for showcasing the results of given step.
     /// </summary>
     public IEnumerator Run()
     {
@@ -138,6 +141,9 @@ public class EvolutionaryMovement : MonoBehaviour
 
 }
 
+/// <summary>
+/// Holds information about system - its components, rootObject, offset.
+/// </summary>
 public class MovementSystem
 {
     public MovementComponent[] components;
@@ -182,6 +188,9 @@ public class MovementSystem
     }
 }
 
+/// <summary>
+/// Holds information about individual, chromosome, last calc fitness, system it belongs to.
+/// </summary>
 public class Individual
 {
     public List<float> chromosome;
@@ -194,6 +203,10 @@ public class Individual
         this.system = system;
     }
 }
+
+/// <summary>
+/// Holds information about population (as a step of evolotionary alg.). Has methods for evolving - Mutation,Crossover,Combination,Init.
+/// </summary>
 public class Population 
 {
     public EvolutionaryMovement evolutionaryMovement;
